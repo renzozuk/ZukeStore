@@ -1,12 +1,18 @@
 import { useState } from 'react'
 import './App.css'
+import Footer from './components/Footer.jsx'
+import Header from './components/Header.jsx'
+import Product from './components/Product.jsx'
 
-function App() {
-
+export default function App() {
   return (
-    <div>
-    </div>
-  )
+    <>
+      <Header />
+      <div className="products">
+        <Product />
+        <Product />
+      </div>
+      <Footer />
+    </>
+  );
 }
-
-export default App
