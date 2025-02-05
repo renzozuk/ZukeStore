@@ -1,0 +1,12 @@
+.footer-div {
+    margin: 0;
+    padding: 7px 0;
+    background-color: red;
+}
+
+.footer-title {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    color: #eee;
+}
