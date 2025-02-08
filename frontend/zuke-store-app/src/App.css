@@ -1,0 +1,8 @@
+.products {
+    padding: 40px 0;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #eee;
+}

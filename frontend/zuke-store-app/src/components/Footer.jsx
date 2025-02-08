@@ -1,9 +1,10 @@
-import './Footer.css'
+import './Footer.css';
+import React from 'react';
 
 export default function Footer() {
     return (
         <div className="footer-div">
-            <p className="footer-title">© 2025, Zuke Store</p>
+            <p className="footer-title">© {new Date().getFullYear()}, Zuke Store</p>
         </div>
     );
 }
