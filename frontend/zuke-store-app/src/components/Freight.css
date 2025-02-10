@@ -1,0 +1,33 @@
+.freight-div {
+    width: 80vw;
+    height: 200px;
+    padding: 10px;
+    background-color: #eee;
+    border-color: #e22e2d;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.outer-freight-close-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.freight-close-button {
+    background-color: #e22e2d;
+    color: #eee;
+    border: none;
+    padding: 6px;
+    font-size: 15px;
+    border-radius: 2px;
+    font-weight: 550;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.freight-close-button:hover {
+    background-color: #d10012;
+    color: #ddd;
+}
