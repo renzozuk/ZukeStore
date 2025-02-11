@@ -1,9 +1,11 @@
 import "./Freight.css";
 import { useState } from "react";
 import CustomMap from "./Map";
+import Toggle from "./Toggle";
 
 export default function Freight(props) {
 
+    const [placeChoiceOption, setPlaceChoiceOption] = useState("CEP");
     const [stateSelected, setStateSelected] = useState(null);
 
     let statesRelation = new Map();
@@ -42,8 +44,9 @@ export default function Freight(props) {
                 <button className="freight-close-button" onClick={() => props.setShowFreight(false)}>X</button>
             </div>
             <p className="freight-instruction-label">Digite o seu CEP ou selecione o seu estado no mapa</p>
+            <Toggle placeChoiceOption={placeChoiceOption} setPlaceChoiceOption={setPlaceChoiceOption} />
             <div className="outer-place-selector">
-                <CustomMap setStateSelected={setStateSelected} />
+                {placeChoiceOption === "MAPA" && <CustomMap setStateSelected={setStateSelected} />}
             </div>
             {stateSelected != null && <p className="freight-price-label">{`Preço do frete para ${statesRelation.get(stateSelected).name}: ${statesRelation.get(stateSelected).price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>}
         </div>

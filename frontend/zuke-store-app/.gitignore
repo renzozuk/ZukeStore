@@ -23,5 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-/src/assets/Brasil_mapa_200.svg
-/src/assets/Brasil_mapa.svg
+/src/assets/*
