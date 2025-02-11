@@ -25,6 +25,7 @@
 
 .product-name::selection, .product-description::selection, .product-price::selection {
     background-color: #e22e2d;
+    color: #eee;
 }
 
 .product-name, .product-price {

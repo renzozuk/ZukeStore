@@ -13,10 +13,6 @@ export default function App() {
     <>
       <Header />
       <div className="main-content">
-        <div className="freight-space">
-          {!showFreight && <button className="show-freight-button" onClick={() => setShowFreight(true)}>Calcular Frete</button>}
-          {showFreight && <Freight setShowFreight={setShowFreight} />}
-        </div>
         <div className="products">
           <Product image="https://images.pexels.com/photos/2815377/pexels-photo-2815377.jpeg" name="Ursinho de Pelúcia" description="Este adorável ursinho de pelúcia é o companheiro perfeito para todas as horas. Feito com materiais macios e de alta qualidade, ele é incrivelmente fofo ao toque, ideal para abraços aconchegantes." price={49.99} />
           <Product />
@@ -31,6 +27,10 @@ export default function App() {
           <Product />
           <Product />
           <Product />
+        </div>
+        <div className="freight-space">
+          {!showFreight && <button className="show-freight-button" onClick={() => setShowFreight(true)}>Calcular Frete</button>}
+          {showFreight && <Freight setShowFreight={setShowFreight} />}
         </div>
       </div>
       <Footer />

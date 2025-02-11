@@ -1,6 +1,6 @@
 .freight-div {
     width: 80vw;
-    height: 200px;
+    height: fit-content;
     padding: 10px;
     background-color: #eee;
     border-color: #e22e2d;
@@ -30,4 +30,23 @@
 .freight-close-button:hover {
     background-color: #d10012;
     color: #ddd;
+}
+
+.freight-instruction-label {
+    margin: -25px 30px 10px;
+    font-size: 20px;
+    text-align: center;
+    color: #e22e2d;
+}
+
+.outer-place-selector {
+    display: flex;
+    justify-content: center;
+}
+
+.freight-price-label {
+    margin: 10px auto 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #111;
 }
