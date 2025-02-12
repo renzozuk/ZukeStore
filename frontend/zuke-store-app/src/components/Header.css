@@ -10,3 +10,8 @@
     text-align: center;
     color: #eee;
 }
+
+.header-title::selection {
+    background-color: #eee;
+    color: #e22e2d;
+}

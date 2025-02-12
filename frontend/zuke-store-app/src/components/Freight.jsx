@@ -1,12 +1,24 @@
 import "./Freight.css";
 import { useState } from "react";
 import CustomMap from "./Map";
+import InputMask from "react-input-mask";
 import Toggle from "./Toggle";
 
 export default function Freight(props) {
 
     const [placeChoiceOption, setPlaceChoiceOption] = useState("CEP");
     const [stateSelected, setStateSelected] = useState(null);
+    const [address, setAddress] = useState(null);
+    const [cep, setCep] = useState(null);
+
+    const getAddress = () => {
+        fetch(`http://viacep.com.br/ws/${cep}/json`)
+            .then((response) => response.json())
+            .then((cepData) => {
+                setAddress(`${cepData.logradouro}, ${cepData.bairro} - ${cepData.localidade} - ${cepData.uf}`);
+                setStateSelected(cepData.uf);
+            })
+    };
 
     let statesRelation = new Map();
 
@@ -39,16 +51,23 @@ export default function Freight(props) {
     statesRelation.set('TO', { name: 'o Tocantins', price: 41.99 });
 
     return (
-        <div className="freight-div">
+        <div className={`freight-div ${placeChoiceOption == 'CEP' && `freight-div-cep`} ${placeChoiceOption == 'MAPA' && `freight-div-mapa`}`}>
             <div className="outer-freight-close-button">
                 <button className="freight-close-button" onClick={() => props.setShowFreight(false)}>X</button>
             </div>
             <p className="freight-instruction-label">Digite o seu CEP ou selecione o seu estado no mapa</p>
-            <Toggle placeChoiceOption={placeChoiceOption} setPlaceChoiceOption={setPlaceChoiceOption} />
+            <Toggle placeChoiceOption={placeChoiceOption} setPlaceChoiceOption={setPlaceChoiceOption} setStateSelected={setStateSelected} setAddress={setAddress} setCep={setCep} />
             <div className="outer-place-selector">
+                {placeChoiceOption === "CEP" && <div className="cep-div">
+                    <label className="cep-label">Insira o seu CEP:</label>
+                    <div className="cep-input-div">
+                        <InputMask className="cep-input" mask="99999-999" onChange={(event) => setCep(event.target.value)} />
+                        <button className="cep-button" onClick={getAddress}>{`>`}</button>
+                    </div>
+                </div>}
                 {placeChoiceOption === "MAPA" && <CustomMap setStateSelected={setStateSelected} />}
             </div>
-            {stateSelected != null && <p className="freight-price-label">{`Preço do frete para ${statesRelation.get(stateSelected).name}: ${statesRelation.get(stateSelected).price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>}
+            {stateSelected != null && <p className="freight-price-label">{`Preço do frete para ${address || statesRelation.get(stateSelected).name}: ${statesRelation.get(stateSelected).price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>}
         </div>
     );
 }
