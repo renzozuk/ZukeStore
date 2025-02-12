@@ -20,6 +20,12 @@ export default function Freight(props) {
             })
     };
 
+    const handleCepInputKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            getAddress();
+        }
+    }
+
     let statesRelation = new Map();
 
     statesRelation.set('AC', { name: 'o Acre', price: 59.99 });
@@ -61,7 +67,7 @@ export default function Freight(props) {
                 {placeChoiceOption === "CEP" && <div className="cep-div">
                     <label className="cep-label">Insira o seu CEP:</label>
                     <div className="cep-input-div">
-                        <InputMask className="cep-input" mask="99999-999" onChange={(event) => setCep(event.target.value)} />
+                        <InputMask className="cep-input" mask="99999-999" onChange={(event) => setCep(event.target.value)} onKeyDown={handleCepInputKeyDown} />
                         <button className="cep-button" onClick={getAddress}>{`>`}</button>
                     </div>
                 </div>}

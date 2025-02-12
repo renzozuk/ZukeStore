@@ -1,4 +1,4 @@
-import './Product.css'
+import "./Product.css";
 
 export default function Product(props) {
 
@@ -6,10 +6,14 @@ export default function Product(props) {
 
     return (
         <div className="product">
-            <img className="product-image" src={props.image || `https://placehold.jp/40/e22e2d/ffffff/275x275.png?text=no+photo`}></img>
-            <div className="product-attributions">
+            <div className="product-upper-information">
+                <img className="product-image" src={props.image || `https://placehold.jp/40/e22e2d/ffffff/275x275.png?text=no+photo`}></img>
                 <p className="product-name">{props.name}</p>
+            </div>
+            <div className="product-middle-information">
                 <p className="product-description">{props.description}</p>
+            </div>
+            <div className="product-lower-information">
                 <p className="product-price">{`${price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>
                 <div className="product-buttons">
                     <button className="product-button product-buy-button">Comprar</button>
