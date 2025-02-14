@@ -23,8 +23,11 @@
     color: #111;
 }
 
-.product-name::selection, .product-description::selection, .product-price::selection {
+.product-image::selection, .product-name::selection, .product-description::selection, .product-price::selection {
     background-color: #e22e2d;
+}
+
+.product-name::selection, .product-description::selection, .product-price::selection {
     color: #eee;
 }
 
