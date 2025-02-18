@@ -12,7 +12,7 @@ export default function Freight(props) {
     const [cep, setCep] = useState(null);
 
     const getAddress = () => {
-        fetch(`http://viacep.com.br/ws/${cep}/json`)
+        fetch(`https://viacep.com.br/ws/${cep}/json`)
             .then((response) => response.json())
             .then((cepData) => {
                 setAddress(`${cepData.logradouro}, ${cepData.bairro} - ${cepData.localidade} - ${cepData.uf}`);
