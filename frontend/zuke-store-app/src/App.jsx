@@ -13,6 +13,10 @@ export default function App() {
     <>
       <Header />
       <div className="main-content">
+        <div className="freight-space">
+          {!showFreight && <button className="show-freight-button" onClick={() => setShowFreight(true)}>Calcular Frete</button>}
+          {showFreight && <Freight setShowFreight={setShowFreight} />}
+        </div>
         <div className="products">
           <Product image="https://images.pexels.com/photos/2815377/pexels-photo-2815377.jpeg" name="Ursinho de Pelúcia" description="Feito com materiais macios e de alta qualidade, ele é incrivelmente fofo ao toque, ideal para abraços aconchegantes." price={49.99} />
           <Product image="https://images.pexels.com/photos/10160241/pexels-photo-10160241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" name="Globo Terrestre" description="O globo terrestre é uma representação tridimensional do planeta Terra, que ilustra de forma precisa a sua forma esférica e suas características geográficas." price={124.99} />
@@ -22,10 +26,6 @@ export default function App() {
           <Product image="https://images.pexels.com/photos/2228889/pexels-photo-2228889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" name="Xícara" description="Perfeita para tomar um bom café no início da manhã ou no lanche da tarde." price={19.99} />
           <Product image="https://images.pexels.com/photos/42257/flowerful-flowery-flowerly-42257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" name="Vaso" description="Perfeito para colocar lindas flores dentro e decorar o ambiente, afim de deixá-lo mais agradável." price={14.99} />
           <Product image="https://images.pexels.com/photos/984619/pexels-photo-984619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" name="Chapéu" description="Ideal para se proteger do sol em um dia ensolarado, além de disfarçar as falhas da calvície." price={4999.99} />
-        </div>
-        <div className="freight-space">
-          {!showFreight && <button className="show-freight-button" onClick={() => setShowFreight(true)}>Calcular Frete</button>}
-          {showFreight && <Freight setShowFreight={setShowFreight} />}
         </div>
       </div>
       <Footer />
