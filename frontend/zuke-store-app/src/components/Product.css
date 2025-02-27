@@ -62,3 +62,12 @@
     background-color: #ffca28;
     color: #222;
 }
+
+.product-button-link {
+    color: #111;
+    text-decoration: none;
+}
+
+.product-button-link:hover {
+    color: #222;
+}

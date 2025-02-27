@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'zukestoreapi.cors_middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'ZukeStoreProject.urls'

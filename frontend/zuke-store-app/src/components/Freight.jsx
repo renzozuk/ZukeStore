@@ -1,7 +1,7 @@
 import "./Freight.css";
 import { useState } from "react";
 import CustomMap from "./Map";
-import InputMask from "react-input-mask";
+import { IMaskInput } from "react-imask";
 import Toggle from "./Toggle";
 
 export default function Freight(props) {
@@ -58,16 +58,16 @@ export default function Freight(props) {
 
     return (
         <div className={`freight-div ${placeChoiceOption == 'CEP' && `freight-div-cep`} ${placeChoiceOption == 'MAPA' && `freight-div-mapa`}`}>
-            <div className="outer-freight-close-button">
+            {/* <div className="outer-freight-close-button">
                 <button className="freight-close-button" onClick={() => props.setShowFreight(false)}>X</button>
-            </div>
+            </div> */}
             <p className="freight-instruction-label">Digite o seu CEP ou selecione o seu estado no mapa</p>
             <Toggle placeChoiceOption={placeChoiceOption} setPlaceChoiceOption={setPlaceChoiceOption} setStateSelected={setStateSelected} setAddress={setAddress} setCep={setCep} />
             <div className="outer-place-selector">
                 {placeChoiceOption === "CEP" && <div className="cep-div">
                     <label className="cep-label">Insira o seu CEP:</label>
                     <div className="cep-input-div">
-                        <InputMask className="cep-input" mask="99999-999" onChange={(event) => setCep(event.target.value)} onKeyDown={handleCepInputKeyDown} />
+                        <IMaskInput className="cep-input" mask="00000-000" onChange={(event) => setCep(event.target.value)} onKeyDown={handleCepInputKeyDown} />
                         <button className="cep-button" onClick={getAddress}>{`>`}</button>
                     </div>
                 </div>}

@@ -14,10 +14,6 @@ export default function App() {
     <>
       <Header />
       <div className="main-content">
-        <div className="freight-space">
-          {!showFreight && <button className="show-freight-button" onClick={() => setShowFreight(true)}>Calcular Frete</button>}
-          {showFreight && <Freight setShowFreight={setShowFreight} />}
-        </div>
         <Outlet />
       </div>
       <Footer />
