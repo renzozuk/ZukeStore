@@ -8,14 +8,20 @@
     border-width: 2px;
 }
 
-.freight-div-cep {
-    min-width: fit-content;
-    max-width: 55vw;
-    width: 35vw;
+@media (orientation: landscape) {
+
 }
 
-.freight-div-mapa {
-    width: 55vw;
+@media (orientation: portrait) {
+    .freight-div-cep {
+        min-width: fit-content;
+        max-width: 55vw;
+        width: 35vw;
+    }
+    
+    .freight-div-mapa {
+        width: 55vw;
+    }
 }
 
 .outer-freight-close-button {

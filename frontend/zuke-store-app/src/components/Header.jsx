@@ -1,9 +1,10 @@
-import './Header.css'
+import "./Header.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
         <div className="header-div">
-            <p className="header-title">Zuke Store</p>
+            <Link className="header-link" to=""><p className="header-title">Zuke Store</p></Link>
         </div>
     );
 }

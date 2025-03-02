@@ -9,7 +9,7 @@ const Department = () => {
     useEffect(() =>{
         loadProducts().then((productsList) => {
             setProducts(productsList);
-        })
+        }).catch((e) => console.log(e));
     });
 
     return (

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function Product(props) {
 
     const price = parseFloat(props.price) || 0.00;
+    const maxLength = 115;
 
     return (
         <div className="product">
@@ -12,7 +13,7 @@ export default function Product(props) {
                 <p className="product-name">{props.name}</p>
             </div>
             <div className="product-middle-information">
-                <p className="product-description">{props.description}</p>
+                <p className="product-description">{props.description.length > maxLength ? `${props.description.substring(0, maxLength)}...` : props.description}</p>
             </div>
             <div className="product-lower-information">
                 <p className="product-price">{`${price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>

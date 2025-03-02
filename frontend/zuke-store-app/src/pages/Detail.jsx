@@ -17,14 +17,16 @@ export default function Detail() {
                 setProduct(result);
             })
         }
-    });
+    }, [productId]);
 
     return (
         <div className="outer-product-detail">
             {product === null ? 
-            <p className="loading-label">Carregando</p> :
+            <p className="loading-label">Carregando...</p> :
             <div className="product-detail">
-                <img className="product-detail-image" src={product.image}></img>
+                <div className="outer-product-detail-image">
+                    <img className="product-detail-image" src={product.image}></img>
+                </div>
                 <p className="product-detail-name">{product.name}</p>
                 <p className="product-detail-description">{product.description}</p>
                 <p className="product-detail-price">{`${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>

@@ -58,9 +58,6 @@ export default function Freight(props) {
 
     return (
         <div className={`freight-div ${placeChoiceOption == 'CEP' && `freight-div-cep`} ${placeChoiceOption == 'MAPA' && `freight-div-mapa`}`}>
-            {/* <div className="outer-freight-close-button">
-                <button className="freight-close-button" onClick={() => props.setShowFreight(false)}>X</button>
-            </div> */}
             <p className="freight-instruction-label">Digite o seu CEP ou selecione o seu estado no mapa</p>
             <Toggle placeChoiceOption={placeChoiceOption} setPlaceChoiceOption={setPlaceChoiceOption} setStateSelected={setStateSelected} setAddress={setAddress} setCep={setCep} />
             <div className="outer-place-selector">
