@@ -1,5 +1,6 @@
 .outer-product-detail {
     min-height: calc(100vh - 164px);
+    margin: 0;
     padding: 25px;
     display: flex;
 }

@@ -57,20 +57,23 @@ export default function Freight(props) {
     statesRelation.set('TO', { name: 'o Tocantins', price: 41.99 });
 
     return (
-        <div className={`freight-div ${placeChoiceOption == 'CEP' && `freight-div-cep`} ${placeChoiceOption == 'MAPA' && `freight-div-mapa`}`}>
-            <p className="freight-instruction-label">Digite o seu CEP ou selecione o seu estado no mapa</p>
-            <Toggle placeChoiceOption={placeChoiceOption} setPlaceChoiceOption={setPlaceChoiceOption} setStateSelected={setStateSelected} setAddress={setAddress} setCep={setCep} />
-            <div className="outer-place-selector">
-                {placeChoiceOption === "CEP" && <div className="cep-div">
-                    <label className="cep-label">Insira o seu CEP:</label>
-                    <div className="cep-input-div">
-                        <IMaskInput className="cep-input" mask="00000-000" onChange={(event) => setCep(event.target.value)} onKeyDown={handleCepInputKeyDown} />
-                        <button className="cep-button" onClick={getAddress}>{`>`}</button>
-                    </div>
-                </div>}
-                {placeChoiceOption === "MAPA" && <CustomMap setStateSelected={setStateSelected} />}
+        <div className="outer-freight-div">
+            <div className={`freight-div ${placeChoiceOption == 'CEP' ? `freight-div-cep` : `freight-div-mapa`}`}>
+                <p className="freight-instruction-label">Digite o seu CEP ou selecione o seu estado no mapa</p>
+                <Toggle placeChoiceOption={placeChoiceOption} setPlaceChoiceOption={setPlaceChoiceOption} setStateSelected={setStateSelected} setAddress={setAddress} setCep={setCep} />
+                <div className="outer-place-selector">
+                    {placeChoiceOption === "CEP" && <div className="cep-div">
+                        <label className="cep-label">Insira o seu CEP:</label>
+                        <div className="cep-input-div">
+                            <IMaskInput className="cep-input" mask="00000-000" onChange={(event) => setCep(event.target.value)} onKeyDown={handleCepInputKeyDown} />
+                            <button className="cep-button" onClick={getAddress}>{`>`}</button>
+                        </div>
+                    </div>}
+                    {placeChoiceOption === "MAPA" && <CustomMap setStateSelected={setStateSelected} />}
+                </div>
+                {stateSelected != null && <p className="freight-price-label">{`Preço do frete para ${address || statesRelation.get(stateSelected).name}: ${statesRelation.get(stateSelected).price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>}
             </div>
-            {stateSelected != null && <p className="freight-price-label">{`Preço do frete para ${address || statesRelation.get(stateSelected).name}: ${statesRelation.get(stateSelected).price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>}
         </div>
+        
     );
 }

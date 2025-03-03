@@ -1,5 +1,12 @@
+.outer-freight-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .freight-div {
     height: fit-content;
+    margin: 25px;
     padding: 10px;
     background-color: #eee;
     border-color: #e22e2d;
@@ -9,10 +16,16 @@
 }
 
 @media (orientation: landscape) {
-
+    .outer-freight-div {
+        width: calc(50vw - 25px);
+    }
 }
 
 @media (orientation: portrait) {
+    .outer-freight-div {
+        width: calc(100vw - 50px);
+    }
+
     .freight-div-cep {
         min-width: fit-content;
         max-width: 55vw;
