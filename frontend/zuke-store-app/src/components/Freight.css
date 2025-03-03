@@ -1,5 +1,12 @@
+.outer-freight-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .freight-div {
     height: fit-content;
+    margin: 25px;
     padding: 10px;
     background-color: #eee;
     border-color: #e22e2d;
@@ -8,14 +15,26 @@
     border-width: 2px;
 }
 
-.freight-div-cep {
-    min-width: fit-content;
-    max-width: 55vw;
-    width: 35vw;
+@media (orientation: landscape) {
+    .outer-freight-div {
+        width: calc(50vw - 25px);
+    }
 }
 
-.freight-div-mapa {
-    width: 55vw;
+@media (orientation: portrait) {
+    .outer-freight-div {
+        width: calc(100vw - 50px);
+    }
+
+    .freight-div-cep {
+        min-width: fit-content;
+        max-width: 55vw;
+        width: 35vw;
+    }
+    
+    .freight-div-mapa {
+        width: 55vw;
+    }
 }
 
 .outer-freight-close-button {
@@ -42,7 +61,7 @@
 }
 
 .freight-instruction-label {
-    margin: -25px 30px 10px;
+    margin: 0 30px 10px;
     font-size: 20px;
     text-align: center;
     color: #111;
