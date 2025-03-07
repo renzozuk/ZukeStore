@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
-import "./Detail.css";
+import { useEffect, useState } from "react";
+/* import "./Detail.css"; */
+import "./ProductContainer.css";
 import Freight from "../components/Freight";
 import { loadProductById, getPrototypeProduct } from "../util/Data";
-import { useEffect, useState } from "react";
 
 export default function Detail() {
 
@@ -20,16 +21,16 @@ export default function Detail() {
     }, [productId]);
 
     return (
-        <div className="outer-product-detail">
+        <div className="outer-contents outer-product-detail">
             {product === null ? 
             <p className="loading-label">Carregando...</p> :
-            <div className="product-detail">
-                <div className="outer-product-detail-image">
-                    <img className="product-detail-image" src={product.image}></img>
+            <div className="product-container product-detail">
+                <div className="outer-product-container-image outer-product-detail-image">
+                    <img className="product-container-image product-detail-image" src={product.image}></img>
                 </div>
-                <p className="product-detail-name">{product.name}</p>
-                <p className="product-detail-description">{product.description}</p>
-                <p className="product-detail-price">{`${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>
+                <p className="product-container-name product-detail-name">{product.name}</p>
+                <p className="product-container-description product-detail-description">{product.description}</p>
+                <p className="product-container-price product-detail-price">{`${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>
             </div>}
             <Freight />
         </div>

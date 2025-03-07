@@ -1,0 +1,67 @@
+.payment-field-div {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.payment-field-label {
+    margin: 0 0 2px 0;
+}
+
+.payment-field-input {
+    height: 25px;
+    font-family: "Outfit", sans-serif;
+    font-size: 15px;
+}
+
+.outer-payment-expiry-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: fit-content;
+}
+
+.expiry-input {
+    width: 80px;
+    height: 25px;
+    border-radius: 3px;
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 15px;
+}
+
+.expiry-input option:hover {
+    background-color: pink;
+}
+
+.expiry-input::-webkit-scrollbar {
+    width: 7px;
+}
+
+.expiry-input::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 7px;
+}
+
+.expiry-input::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 7px;
+}
+
+.expiry-input::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.expiry-input-year {
+    size: 5;
+}
+
+.expiry-input-divisor {
+    margin: 1px 2px;
+    font-size: 17.5px;
+}
+
+.payment-cvc-input {
+    width: 50px;
+}
