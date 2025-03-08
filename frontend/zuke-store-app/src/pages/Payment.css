@@ -1,3 +1,12 @@
+@media (orientation: landscape) {
+    .outer-payment-container {
+        width: calc(50vw - 25px);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
 .payment-field-div {
     margin: 8px 0;
     display: flex;
@@ -5,14 +14,28 @@
     justify-content: center;
 }
 
+.payment-method-warning {
+    font-size: 18px;
+}
+
 .payment-field-label {
     margin: 0 0 2px 0;
+    cursor: text;
+}
+
+.payment-method-warning::selection, .payment-field-label::selection {
+    background-color: #e22e2d;
+    color: #eee;
 }
 
 .payment-field-input {
     height: 25px;
     font-family: "Outfit", sans-serif;
     font-size: 15px;
+}
+
+.payment-name-input, .payment-cardnumber-input {
+    width: 400px;
 }
 
 .outer-payment-expiry-inputs {
@@ -49,7 +72,7 @@
     border-radius: 7px;
 }
 
-.expiry-input::-webkit-scrollbar-thumb:hover {
+.expiry-input::-webkit-scrollbar-thumb::selection {
     background: #555;
 }
 
@@ -65,3 +88,122 @@
 .payment-cvc-input {
     width: 50px;
 }
+
+.card {
+    width: 350px;
+    height: 160px;
+    border-radius: 25px;
+}
+
+.card-front {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: aqua;
+    -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.outer-card-brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.visa-card-brand {
+    width: 80px;
+    height: 40px;
+}
+
+.mastercard-card-brand {
+    width: 70px;
+    height: 40px;
+}
+
+.card-front-chip {
+    width: 32px;
+    height: 32px;
+}
+
+.card-front-label {
+    margin: 1px 0px;
+}
+
+.card-front-expirylabel {
+    font-size: 10px;
+    margin: 2px 0 0 0;
+}
+
+.card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: aqua;
+    -webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.card-back-first-space {
+    height: 40%;
+}
+
+.card-back-second-space {
+    height: fit-content;
+    margin: 0;
+    padding: 0 10px;
+    background-color: #000;
+}
+
+.card-back-third-space {
+    height: 50%;
+}
+
+.card-back-label {
+    margin: 10px 0;
+    text-align: right;
+    color: #eee;
+}
+
+@-webkit-keyframes flip-vertical-left {
+    0% {
+        -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+      }
+    100% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+}
+  @keyframes flip-vertical-left {
+    0% {
+        -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+      }
+    100% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+}
+
+@-webkit-keyframes flip-vertical-right {
+    0% {
+        -webkit-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+      }
+    100% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+}
+  @keyframes flip-vertical-right {
+    0% {
+        -webkit-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+      }
+    100% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+}
+  

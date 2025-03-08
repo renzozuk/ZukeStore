@@ -14,7 +14,3 @@ body {
     display: flex;
     min-height: 100vh;
 }
-
-/* ::selection {
-    background-color: #ff2d00;
-} */

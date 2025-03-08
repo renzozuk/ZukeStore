@@ -54,7 +54,7 @@ function isVisa(number) {
 }
 
 function isMasterCard(number) {
-    return (number.startsWith("51") || number.startsWith("55") || number.startsWith("2221") || number.startsWith("2720")) && number.length === 16;
+    return (number.startsWith("5") || number.startsWith("2221") || number.startsWith("2720")) && number.length === 16;
 }
 
 function isAmericanExpress(number) {
