@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./Payment.css";
 import "./ProductContainer.css";
 import { loadProductById, getPrototypeProduct } from "../util/Data";
-import { isValid, isVisa, isMasterCard, isAmericanExpress, isDiscover } from "../util/Validators";
+import { isValid, isVisa, isMasterCard } from "../util/Validators";
 import { IMaskInput } from "react-imask";
 
 export default function Payment() {
@@ -79,9 +79,8 @@ export default function Payment() {
                         <label className="payment-field-label payment-cvc-label">CVV:</label>
                         <IMaskInput className="payment-field-input payment-cvc-input" mask="0000" onChange={(event) => setCvc(event.target.value)} onClick={() => setShowCardBack(true)}></IMaskInput>
                     </div>
-                    {/* <p>Número do cartão de crédito{!isValid(cardNumber) && ` não`} é válido</p> */}
                     {showCardBack ? 
-                    <div  className="card card-back">
+                    <div className="card card-back">
                         <div className="card-back-first-space"></div>
                         <div className="card-back-second-space">
                             <p className="card-back-label card-back-cvc">{cvc.length > 0 ? cvc : "{CVV}"}</p>

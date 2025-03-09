@@ -54,15 +54,7 @@ function isVisa(number) {
 }
 
 function isMasterCard(number) {
-    return (number.startsWith("5") || number.startsWith("2221") || number.startsWith("2720")) && number.length === 16;
+    return ((parseInt(number.substring(0, 2)) >= 51 && parseInt(number.substring(0, 2)) <= 55) || (parseInt(number.substring(0, 4)) >= 2221 && parseInt(number.substring(0, 4)) <= 2720)) && number.length === 16;
 }
 
-function isAmericanExpress(number) {
-    return (number.startsWith("34") || number.startsWith("37")) && number.length === 15;
-}
-
-function isDiscover(number) {
-    return number.startsWith("6") && number.length >= 16 && number.length <= 19;
-}
-
-export { isValid, isVisa, isMasterCard, isAmericanExpress, isDiscover };
+export { isValid, isVisa, isMasterCard };

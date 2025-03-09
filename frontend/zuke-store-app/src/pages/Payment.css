@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 @media (orientation: landscape) {
     .outer-payment-container {
         width: calc(50vw - 25px);
@@ -7,15 +9,22 @@
     }
 }
 
-.payment-field-div {
-    margin: 8px 0;
+.payment-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .payment-method-warning {
+    margin: 8px 0;
     font-size: 18px;
+}
+
+.payment-field-div {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .payment-field-label {
@@ -30,8 +39,21 @@
 
 .payment-field-input {
     height: 25px;
+    padding-left: 5px;
     font-family: "Outfit", sans-serif;
     font-size: 15px;
+}
+
+.payment-field-input, .expiry-input {
+    border-color: #e22e2d;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.payment-field-input:focus, .expiry-input:focus {
+    border: 2px solid #d10012;
+    outline: 1px solid #d10012;
 }
 
 .payment-name-input, .payment-cardnumber-input {
@@ -92,6 +114,7 @@
 .card {
     width: 350px;
     height: 160px;
+    margin-top: 20px;
     border-radius: 25px;
 }
 
@@ -100,7 +123,8 @@
     padding: 10px;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: aqua;
+    background-color: pink;
+    background-image: linear-gradient(to top right, pink, #aaa);
     -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
@@ -126,8 +150,18 @@
     height: 32px;
 }
 
+.card-front-label, .card-back-label {
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+}
+
 .card-front-label {
     margin: 1px 0px;
+}
+
+.card-front-label::selection {
+    background-color: #e22e2d;
+    color: #eee;
 }
 
 .card-front-expirylabel {
@@ -139,7 +173,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: aqua;
+    background-color: pink;
+    background-image: linear-gradient(to top left, pink, #aaa);
     -webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
