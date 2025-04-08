@@ -1,7 +1,9 @@
+@use "../variables.scss" as v;
+
 .header-div {
     margin: 0;
     padding: 15px 0;
-    background-color: #e22e2d;
+    background-color: v.$primary-color;
 }
 
 .header-link {
@@ -12,14 +14,14 @@
     margin: 0;
     font-size: 40px;
     text-align: center;
-    color: #eee;
+    color: v.$light-color;
 }
 
 .header-title:hover {
-    color: #ddd;
+    color: v.$light-color-1;
 }
 
 .header-title::selection {
-    background-color: #eee;
-    color: #e22e2d;
+    background-color: v.$light-color;
+    color: v.$primary-color;
 }

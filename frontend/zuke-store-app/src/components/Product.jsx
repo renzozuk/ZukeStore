@@ -1,4 +1,4 @@
-import "./Product.css";
+import "./Product.scss";
 import { Link } from "react-router-dom";
 
 export default function Product(props) {

@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./Payment.css";
-import "./ProductContainer.css";
+import "./Payment.scss";
+import "./ProductContainer.scss";
 import { loadProductById, getPrototypeProduct } from "../util/Data";
 import { isValid, isVisa, isMasterCard } from "../util/Validators";
 import { IMaskInput } from "react-imask";

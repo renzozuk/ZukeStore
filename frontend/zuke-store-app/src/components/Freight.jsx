@@ -1,4 +1,4 @@
-import "./Freight.css";
+import "./Freight.scss";
 import { useState } from "react";
 import CustomMap from "./Map";
 import { IMaskInput } from "react-imask";

@@ -1,4 +1,4 @@
-import "./Toggle.css";
+import "./Toggle.scss";
 import React from 'react';
 
 export default function Toggle(props) {

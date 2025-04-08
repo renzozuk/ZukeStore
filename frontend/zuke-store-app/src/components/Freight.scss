@@ -1,3 +1,5 @@
+@use "../variables.scss" as v;
+
 .outer-freight-div {
     display: flex;
     justify-content: center;
@@ -8,8 +10,8 @@
     height: fit-content;
     margin: 25px;
     padding: 10px;
-    background-color: #eee;
-    border-color: #e22e2d;
+    background-color: v.$light-color;
+    border-color: v.$primary-color;
     border-radius: 10px;
     border-style: solid;
     border-width: 2px;
@@ -44,8 +46,8 @@
 }
 
 .freight-close-button {
-    background-color: #e22e2d;
-    color: #eee;
+    background-color: v.$primary-color;
+    color: v.$light-color;
     border: none;
     padding: 6px;
     font-size: 15px;
@@ -56,15 +58,15 @@
 }
 
 .freight-close-button:hover {
-    background-color: #d10012;
-    color: #ddd;
+    background-color: v.$primary-color-darker;
+    color: v.$light-color-1;
 }
 
 .freight-instruction-label {
     margin: 0 30px 10px;
     font-size: 20px;
     text-align: center;
-    color: #111;
+    color: v.$dark-color;
 }
 
 .outer-place-selector {
@@ -79,14 +81,14 @@
 }
 
 .cep-label {
-    color: #111;
+    color: v.$dark-color;
 }
 
 .cep-input-div {
     padding: 5px;
     display: flex;
     flex-direction: row;
-    border-color: #e22e2d;
+    border-color: v.$primary-color;
     border-radius: 5px;
     border-style: solid;
     border-width: 2px;
@@ -95,7 +97,7 @@
 .cep-input {
     height: 20px;
     border: none;
-    background-color: #eee;
+    background-color: v.$light-color;
     font-family: "Outfit", sans-serif;
 }
 
@@ -106,26 +108,26 @@
 
 .cep-button {
     height: 20px;
-    background-color: #e22e2d;
-    color: #eee;
+    background-color: v.$primary-color;
+    color: v.$light-color;
     border: none;
     border-radius: 2.5px;
     cursor: pointer;
 }
 
 .cep-button:hover {
-    background-color: #d10012;
-    color: #ddd;
+    background-color: v.$primary-color-darker;
+    color: v.$light-color-1;
 }
 
 .freight-price-label {
     margin: 10px auto;
     font-size: 18px;
     text-align: center;
-    color: #111;
+    color: v.$dark-color;
 }
 
 .freight-instruction-label::selection, .cep-label::selection, .cep-input::selection, .freight-price-label::selection {
-    background-color: #e22e2d;
-    color: #eee;
+    background-color: v.$primary-color;
+    color: v.$light-color;
 }
