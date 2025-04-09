@@ -1,3 +1,5 @@
+@use "../variables.scss" as v;
+
 .outer-toggle-container {
     display: flex;
     flex-direction: row;
@@ -6,7 +8,7 @@
 
 .toggle-container {
     padding: 5px;
-    border-color: #e22e2d;
+    border-color: v.$primary-color;
     border-style: solid;
     border-width: 2.5px;
     border-radius: 5px;
@@ -17,14 +19,14 @@
     border: none;
     padding: 10px 20px;
     font-weight: 550;
-    color: #e22e2d;
+    color: v.$primary-color;
     border-radius: 5px;
     cursor: pointer;
 }
   
 .toggle-button.active {
-    background-color: #e22e2d;
-    color: #eee;
+    background-color: v.$primary-color;
+    color: v.$light-color;
 }
   
 .selected-option {

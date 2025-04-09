@@ -1,10 +1,12 @@
+@use "../variables.scss" as v;
+
 .product {
     width: 275px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #eee;
+    background-color: v.$light-color;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -20,15 +22,15 @@
 
 .product-name, .product-description, .product-price {
     margin: 15px auto 0;
-    color: #111;
+    color: v.$dark-color;
 }
 
 .product-image::selection, .product-name::selection, .product-description::selection, .product-price::selection {
-    background-color: #e22e2d;
+    background-color: v.$primary-color;
 }
 
 .product-name::selection, .product-description::selection, .product-price::selection {
-    color: #eee;
+    color: v.$light-color;
 }
 
 .product-name, .product-price {
@@ -48,8 +50,8 @@
 }
 
 .product-button {
-    background-color: #ffc107;
-    color: #111;
+    background-color: v.$buy-button-color;
+    color: v.$dark-color;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -59,15 +61,15 @@
 }
 
 .product-button:hover {
-    background-color: #ffca28;
-    color: #222;
+    background-color: v.$buy-button-color-lighter;
+    color: v.$dark-color-1;
 }
 
 .product-button-link {
-    color: #111;
+    color: v.$dark-color;
     text-decoration: none;
 }
 
 .product-button-link:hover {
-    color: #222;
+    color: v.$dark-color;
 }

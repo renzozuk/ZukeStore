@@ -1,3 +1,5 @@
+@use "../variables.scss" as v;
+
 .outer-contents {
     min-height: calc(100vh - 164px);
     margin: 0;
@@ -78,9 +80,9 @@
 }
 
 .loading-label::selection, .product-container-image::selection, .product-container-name::selection, .product-container-description::selection, .product-container-price::selection {
-    background-color: #e22e2d;
+    background-color: v.$primary-color;
 }
 
 .loading-label::selection, .product-container-name::selection, .product-container-description::selection, .product-container-price::selection {
-    color: #eee;
+    color: v.$light-color;
 }

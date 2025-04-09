@@ -1,4 +1,7 @@
+@use "../variables.scss" as v;
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+$card-primary-color: rgb(0, 204, 255);
 
 @media (orientation: landscape) {
     .outer-payment-container {
@@ -40,15 +43,15 @@
 }
 
 .payment-field-input, .expiry-input {
-    border-color: #e22e2d;
+    border-color: v.$primary-color;
     border-radius: 5px;
     border-style: solid;
     border-width: 2px;
 }
 
 .payment-field-input:focus, .expiry-input:focus {
-    border: 2px solid #d10012;
-    outline: 1px solid #d10012;
+    border: 2px solid v.$primary-color-darker;
+    outline: 1px solid v.$primary-color-darker;
 }
 
 .payment-name-input, .payment-cardnumber-input {
@@ -71,8 +74,9 @@
     font-size: 15px;
 }
 
-.expiry-input option:hover {
-    background-color: pink;
+.expiry-input option:checked {
+    background-color: v.$primary-color;
+    color: v.$light-color;
 }
 
 .expiry-input::-webkit-scrollbar {
@@ -80,17 +84,17 @@
 }
 
 .expiry-input::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+    background-color: v.$scrollbar-track-background-color;
     border-radius: 7px;
 }
 
 .expiry-input::-webkit-scrollbar-thumb {
-    background: #888;
+    background: v.$balanced-gray;
     border-radius: 7px;
 }
 
 .expiry-input::-webkit-scrollbar-thumb::selection {
-    background: #555;
+    background: v.$dark-color-4;
 }
 
 .expiry-input-year {
@@ -118,8 +122,8 @@
     padding: 10px;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: pink;
-    background-image: linear-gradient(to top right, pink, #aaa);
+    background-color: $card-primary-color;
+    background-image: linear-gradient(to top right, $card-primary-color, v.$light-color-4);
     -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
@@ -163,8 +167,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: pink;
-    background-image: linear-gradient(to top left, pink, #aaa);
+    background-color: $card-primary-color;
+    background-image: linear-gradient(to top left, $card-primary-color, v.$light-color-4);
     -webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
@@ -177,7 +181,7 @@
     height: fit-content;
     margin: 0;
     padding: 0 10px;
-    background-color: #000;
+    background-color: v.$dark-color;
 }
 
 .card-back-third-space {
@@ -187,7 +191,7 @@
 .card-back-label {
     margin: 10px 0;
     text-align: right;
-    color: #eee;
+    color: v.$light-color;
 }
 
 @-webkit-keyframes flip-vertical-left {
@@ -233,9 +237,9 @@
 }
 
 .payment-method-warning::selection, .payment-field-label::selection, .payment-field-input::selection, .card-brand::selection, .card-front-chip::selection, .card-front-label::selection {
-    background-color: #e22e2d;
+    background-color: v.$primary-color;
 }
 
 .payment-method-warning::selection, .payment-field-label::selection, .payment-field-input::selection, .card-front-label::selection {
-    color: #eee;
+    color: v.$light-color;
 }

@@ -1,0 +1,19 @@
+@use "../variables.scss" as v;
+
+.footer-div {
+    margin: 0;
+    padding: 8px 0;
+    background-color: v.$primary-color;
+}
+
+.footer-title {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    color: v.$light-color;
+}
+
+.footer-title::selection {
+    background-color: v.$light-color;
+    color: v.$primary-color;
+}
