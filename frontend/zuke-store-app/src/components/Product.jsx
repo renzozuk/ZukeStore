@@ -20,7 +20,7 @@ export default function Product(props) {
                 <p className="product-price">{`${price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</p>
                 <div className="product-buttons">
                     <button className="product-button product-buy-button"><Link className="product-button-link" to={`/payment/${props.id}`}>Comprar</Link></button>
-                    <button className="product-button product-detail-button"><Link className="product-button-link" to={`/detail/${props.id}`}>Detalhes</Link></button>
+                    {/* <button className="product-button product-detail-button"><Link className="product-button-link" to={`/detail/${props.id}`}>Adicionar ao carrinho</Link></button> */}
                 </div>
             </div>
         </div>

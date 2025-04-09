@@ -6,6 +6,7 @@ import "./ProductContainer.scss";
 import { loadProductById, getPrototypeProduct } from "../util/Data";
 import { isValid, isVisa, isMasterCard } from "../util/Validators";
 import { IMaskInput } from "react-imask";
+import Freight from "../components/Freight";
 
 export default function Payment() {
 
@@ -103,7 +104,8 @@ export default function Payment() {
                         <p className="card-front-label card-front-ownername">{cardOwnerName.length > 0 ? cardOwnerName : "{Nome do utilizador do cartão}"}</p>
                     </div>}
                 </div>
-            </div> 
+            </div>
+            <Freight />
         </div>
     );
 }

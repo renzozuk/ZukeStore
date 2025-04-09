@@ -2,7 +2,7 @@ import "./Freight.scss";
 import { useState } from "react";
 import CustomMap from "./Map";
 import { IMaskInput } from "react-imask";
-import statesData from "/public/statesData.json";
+import statesData from "../assets/statesData.json";
 import Toggle from "./Toggle";
 
 export default function Freight() {

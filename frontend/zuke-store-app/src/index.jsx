@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Department from "./pages/Department.jsx";
-import Detail from "./pages/Detail.jsx";
 import Payment from "./pages/Payment.jsx";
 
 const router = createBrowserRouter([
@@ -15,10 +14,6 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Department />,
-            },
-            {
-                path: "/detail/:productId",
-                element: <Detail />
             },
             {
                 path: "/payment/:productId",

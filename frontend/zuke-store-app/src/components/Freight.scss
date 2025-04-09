@@ -17,28 +17,6 @@
     border-width: 2px;
 }
 
-@media (orientation: landscape) {
-    .outer-freight-div {
-        width: calc(50vw - 25px);
-    }
-}
-
-@media (orientation: portrait) {
-    .outer-freight-div {
-        width: calc(100vw - 50px);
-    }
-
-    .freight-div-cep {
-        min-width: fit-content;
-        max-width: 55vw;
-        width: 35vw;
-    }
-    
-    .freight-div-mapa {
-        width: 55vw;
-    }
-}
-
 .outer-freight-close-button {
     display: flex;
     flex-direction: row;

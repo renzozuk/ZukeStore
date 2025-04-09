@@ -3,13 +3,10 @@
 
 $card-primary-color: rgb(0, 204, 255);
 
-@media (orientation: landscape) {
-    .outer-payment-container {
-        width: calc(50vw - 25px);
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+.outer-payment-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .payment-container {

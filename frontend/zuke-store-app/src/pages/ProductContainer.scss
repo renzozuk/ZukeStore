@@ -5,24 +5,8 @@
     margin: 0;
     padding: 25px;
     display: flex;
-}
-
-@media (orientation: landscape) {
-    .outer-contents {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .product-container {
-        width: calc(50vw - 25px);
-    }
-}
-
-@media (orientation: portrait) {
-    .outer-contents {
-        flex-direction: column;
-        justify-content: center;
-    }
+    flex-direction: column;
+    justify-content: center;
 }
 
 .loading-label {
@@ -32,12 +16,6 @@
 .outer-product-container-image {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-}
-
-.product-container {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 

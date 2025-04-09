@@ -1,5 +1,5 @@
 import "./Map.css";
-import statesData from "/public/statesData.json";
+import statesData from "../assets/statesData.json";
 import State from "./State";
 
 export default function CustomMap(props) {
