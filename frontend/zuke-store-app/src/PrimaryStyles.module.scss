@@ -1,0 +1,7 @@
+@use "./variables.scss" as v;
+
+:export {
+    lightColor: v.$light-color;
+    primaryColor: v.$primary-color;
+    primaryColorDarker: v.$primary-color-darker;
+}

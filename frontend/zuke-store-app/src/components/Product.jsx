@@ -1,4 +1,5 @@
 import "./Product.scss";
+import styles from "../PrimaryStyles.module.scss";
 import { Link } from "react-router-dom";
 
 export default function Product(props) {
@@ -9,7 +10,7 @@ export default function Product(props) {
     return (
         <div className="product">
             <div className="product-upper-information">
-                <img className="product-image" src={props.image || `https://placehold.jp/40/e22e2d/ffffff/275x275.png?text=no+photo`}></img>
+                <img className="product-image" src={props.image || `https://placehold.jp/40/${styles.primaryColor.replace("#", "")}/${styles.lightColor.replace("#", "")}/275x275.png?text=no+photo`}></img>
                 <p className="product-name">{props.name}</p>
             </div>
             <div className="product-middle-information">
